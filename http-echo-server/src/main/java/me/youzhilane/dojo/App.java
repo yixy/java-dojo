@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @SpringBootApplication
 public class App {
-    @RequestMapping("/")
+    int count=0;
+
+    @RequestMapping("/hello")
     @ResponseBody
     String home() {
-        return "Hello World!";
+        ++count;
+        return "Hello World!  "+count;
     }
 
     public static void main(String[] args) throws Exception {
